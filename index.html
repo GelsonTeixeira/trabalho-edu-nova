@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduNova - Transforme seu Futuro</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Configurações Personalizadas do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563EB', // Azul Royal
+                        secondary: '#F59E0B', // Amarelo/Laranja
+                        dark: '#1E293B',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animações personalizadas */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilo suave para imagens */
+        .hover-zoom img {
+            transition: transform 0.5s ease;
+        }
+        .hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-600 antialiased">
+
+    <!-- Barra de Navegação -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white text-xl font-bold">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <span class="font-bold text-2xl text-dark">EduNova</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio" class="text-gray-600 hover:text-primary font-medium transition">Início</a>
+                    <a href="#cursos" class="text-gray-600 hover:text-primary font-medium transition">Cursos</a>
+                    <a href="#sobre" class="text-gray-600 hover:text-primary font-medium transition">Sobre</a>
+                    <a href="#depoimentos" class="text-gray-600 hover:text-primary font-medium transition">Depoimentos</a>
+                </div>
+
+                <!-- CTA Button Desktop -->
+                <div class="hidden md:flex">
+                    <a href="#contato" class="bg-primary hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg shadow-blue-500/30">
+                        Começar Agora
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 text-center shadow-lg">
+                <a href="#inicio" class="block px-3 py-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Início</a>
+                <a href="#cursos" class="block px-3 py-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Cursos</a>
+                <a href="#sobre" class="block px-3 py-3 text-gray-600 hover:text-primary hover:bg-gray-50 rounded-md font-medium">Sobre</a>
+                <a href="#contato" class="block mt-4 bg-primary text-white px-5 py-3 rounded-lg font-bold">Começar Agora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Hero -->
+    <section id="inicio" class="pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <!-- Texto Hero -->
+                <div class="text-center lg:text-left z-10">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-primary text-sm font-bold mb-6 fade-in-up">
+                        🚀 O futuro da educação online
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight mb-6 fade-in-up delay-100">
+                        Aprenda novas habilidades <span class="text-primary">sem limites</span>.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 fade-in-up delay-200">
+                        Tenha acesso a mais de 500 cursos com certificados reconhecidos pelo mercado. Estude no seu tempo, onde e quando quiser.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start fade-in-up delay-300">
+                        <a href="#cursos" class="bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition shadow-xl shadow-blue-500/20 text-center">
+                            Explorar Cursos
+                        </a>
+                        <a href="#" class="flex items-center justify-center gap-2 text-dark font-semibold px-8 py-4 hover:bg-gray-50 rounded-lg transition border border-gray-200 bg-white">
+                            <i class="fa-solid fa-play-circle text-primary text-xl"></i> Ver como funciona
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-500 fade-in-up delay-300">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=64&h=64" alt="User">
+                        </div>
+                        <p>Mais de <span class="font-bold text-dark">15.000</span> alunos ativos.</p>
+                    </div>
+                </div>
+
+                <!-- Imagem Hero -->
+                <div class="relative lg:h-auto fade-in-up delay-200">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl transform rotate-1 hover:rotate-0 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Estudantes aprendendo juntos" class="w-full h-full object-cover">
+                        <!-- Card Flutuante -->
+                        <div class="absolute bottom-6 left-6 bg-white p-4 rounded-xl shadow-lg flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                            <div class="bg-green-100 p-3 rounded-full text-green-600">
+                                <i class="fa-solid fa-check text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-semibold uppercase">Status</p>
+                                <p class="font-bold text-dark">Certificado Garantido</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Elemento Decorativo -->
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-100"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="py-10 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <h3 class="text-3xl font-bold text-primary mb-1">500+</h3>
+                    <p class="text-gray-500 font-medium">Cursos Online</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-primary mb-1">15k+</h3>
+                    <p class="text-gray-500 font-medium">Alunos Ativos</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-primary mb-1">120+</h3>
+                    <p class="text-gray-500 font-medium">Instrutores</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-primary mb-1">4.9</h3>
+                    <p class="text-gray-500 font-medium">Avaliação Média</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cursos Populares -->
+    <section id="cursos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Explore Nossos Cursos Populares</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Escolha entre diversas categorias e comece sua jornada de aprendizado hoje mesmo.</p>
+            </div>
+
+            <!-- Grid de Cursos -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-zoom cursor-pointer group hover:shadow-xl transition">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Curso Web Dev" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wide">Tecnologia</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-sm text-gray-500">
+                            <span><i class="fa-regular fa-clock"></i> 12h 30m</span>
+                            <span>|</span>
+                            <span><i class="fa-solid fa-star text-secondary"></i> 4.8</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition">Desenvolvimento Web Fullstack</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Aprenda HTML, CSS, JavaScript e React do zero ao avançado com projetos reais.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Instrutor" class="w-8 h-8 rounded-full">
+                                <span class="text-sm font-medium text-dark">André S.</span>
+                            </div>
+                            <span class="text-lg font-bold text-primary">R$ 199</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-zoom cursor-pointer group hover:shadow-xl transition">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Curso Marketing" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-secondary uppercase tracking-wide">Negócios</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-sm text-gray-500">
+                            <span><i class="fa-regular fa-clock"></i> 8h 15m</span>
+                            <span>|</span>
+                            <span><i class="fa-solid fa-star text-secondary"></i> 4.9</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition">Marketing Digital Estratégico</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Domine as redes sociais, SEO e tráfego pago para alavancar qualquer negócio.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instrutor" class="w-8 h-8 rounded-full">
+                                <span class="text-sm font-medium text-dark">Carla M.</span>
+                            </div>
+                            <span class="text-lg font-bold text-primary">R$ 149</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover-zoom cursor-pointer group hover:shadow-xl transition">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1561559134-2968d2d3161c?auto=format&fit=crop&w=600&q=80" alt="Curso Design" class="w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-pink-500 uppercase tracking-wide">Design</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-sm text-gray-500">
+                            <span><i class="fa-regular fa-clock"></i> 10h 00m</span>
+                            <span>|</span>
+                            <span><i class="fa-solid fa-star text-secondary"></i> 5.0</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition">UX/UI Design Masterclass</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">Crie interfaces incríveis e experiências de usuário memoráveis com Figma.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="Instrutor" class="w-8 h-8 rounded-full">
+                                <span class="text-sm font-medium text-dark">Lucas P.</span>
+                            </div>
+                            <span class="text-lg font-bold text-primary">R$ 179</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="text-primary font-bold hover:underline">Ver todos os cursos <i class="fa-solid fa-arrow-right ml-1"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por que nos escolher (Features) -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-primary rounded-3xl transform rotate-3 opacity-10"></div>
+                    <img src="https://images.unsplash.com/photo-1523287562758-66c7fc58967f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Benefícios" class="relative rounded-3xl shadow-lg w-full">
+                    <!-- Badge -->
+                    <div class="absolute top-10 -right-6 bg-white p-4 rounded-lg shadow-xl max-w-xs hidden md:block">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-dark">Qualidade Premiada</p>
+                                <p class="text-xs text-gray-500">Melhor plataforma 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Aprendizado focado no seu <span class="text-primary">crescimento real</span>.</h2>
+                    <p class="text-gray-600 mb-8">Nossa metodologia foi desenhada para quem precisa de resultados rápidos e práticos, sem perder a profundidade teórica.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-primary flex-shrink-0">
+                                <i class="fa-solid fa-laptop-code text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-dark mb-1">Aulas 100% Práticas</h4>
+                                <p class="text-gray-500 text-sm">Aprenda fazendo com projetos que simulam desafios reais do mercado de trabalho.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-secondary flex-shrink-0">
+                                <i class="fa-solid fa-certificate text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-dark mb-1">Certificado Reconhecido</h4>
+                                <p class="text-gray-500 text-sm">Ao concluir, receba um certificado válido para impulsionar seu currículo e LinkedIn.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 flex-shrink-0">
+                                <i class="fa-solid fa-users text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-dark mb-1">Comunidade e Mentoria</h4>
+                                <p class="text-gray-500 text-sm">Tire dúvidas diretamente com instrutores e troque experiências com outros alunos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Newsletter -->
+    <section id="contato" class="py-20 bg-primary relative overflow-hidden">
+        <!-- Background Patterns -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+            <i class="fa-solid fa-shapes absolute top-10 left-10 text-9xl text-white"></i>
+            <i class="fa-solid fa-code absolute bottom-10 right-10 text-9xl text-white"></i>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Pronto para começar sua jornada?</h2>
+            <p class="text-blue-100 mb-8 text-lg">Junte-se a nossa newsletter e receba um cupom de 20% de desconto no seu primeiro curso.</p>
+
+            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+                <input type="email" required placeholder="Seu melhor e-mail" class="flex-1 px-6 py-4 rounded-lg text-dark focus:outline-none focus:ring-4 focus:ring-blue-400">
+                <button type="submit" class="bg-secondary hover:bg-amber-600 text-white font-bold px-8 py-4 rounded-lg transition shadow-lg">
+                    Quero meu Desconto
+                </button>
+            </form>
+            <p class="mt-4 text-xs text-blue-200">Não enviamos spam. Cancele quando quiser.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4 text-white">
+                        <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="font-bold text-xl">EduNova</span>
+                    </div>
+                    <p class="text-sm max-w-xs mb-6">Transformando vidas através da educação online de qualidade. Aprenda hoje, lidere amanhã.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 bg-gray-800 flex items-center justify-center rounded-full hover:bg-primary hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 bg-gray-800 flex items-center justify-center rounded-full hover:bg-primary hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 bg-gray-800 flex items-center justify-center rounded-full hover:bg-primary hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 bg-gray-800 flex items-center justify-center rounded-full hover:bg-primary hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Plataforma</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Cursos</a></li>
+                        <li><a href="#" class="hover:text-white transition">Mentores</a></li>
+                        <li><a href="#" class="hover:text-white transition">Preços</a></li>
+                        <li><a href="#" class="hover:text-white transition">Para Empresas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Suporte</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Fale Conosco</a></li>
+                        <li><a href="#" class="hover:text-white transition">Termos de Uso</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacidade</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 EduNova Inc. Todos os direitos reservados.</p>
+                <p>Feito com <i class="fa-solid fa-heart text-red-500"></i> para educação.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts / Lógica JavaScript -->
+    <script>
+        // Lógica do Menu Mobile
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            // Alternar ícone
+            if(menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        // Fechar menu ao clicar em um link (mobile)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Sistema de Notificação Simples (Toast)
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            const bgClass = type === 'success' ? 'bg-green-500' : 'bg-red-500';
+            const iconClass = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+            
+            toast.className = `fixed bottom-5 right-5 ${bgClass} text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 transform translate-y-20 transition-all duration-500 z-50`;
+            toast.innerHTML = `
+                <i class="fa-solid ${iconClass} text-xl"></i>
+                <span class="font-medium">${message}</span>
+            `;
+
+            document.body.appendChild(toast);
+
+            // Animação de entrada
+            setTimeout(() => {
+                toast.classList.remove('translate-y-20');
+            }, 100);
+
+            // Remover após 4 segundos
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+                setTimeout(() => toast.remove(), 500);
+            }, 4000);
+        }
+
+        // Lógica do Formulário de Newsletter
+        const form = document.getElementById('newsletter-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const emailInput = form.querySelector('input');
+            
+            if(emailInput.value) {
+                // Simula envio
+                const btn = form.querySelector('button');
+                const originalText = btn.innerText;
+                
+                btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
+                btn.disabled = true;
+
+                setTimeout(() => {
+                    showToast('Inscrição realizada com sucesso! Verifique seu e-mail.');
+                    emailInput.value = '';
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }, 1500);
+            }
+        });
+
+        // Efeito de sombra na Navbar ao rolar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
