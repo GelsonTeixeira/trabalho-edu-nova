@@ -24,6 +24,9 @@ jobs:
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
+
+      - name: Explorando o Runner
+        run: Isb_release -a
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
